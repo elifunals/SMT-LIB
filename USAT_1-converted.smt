@@ -1,0 +1,22 @@
+(set-logic QF_UF)
+(declare-fun A () Bool)
+(declare-fun B () Bool)
+(declare-fun C () Bool)
+(declare-fun D () Bool)
+(declare-fun E () Bool)
+(declare-fun F () Bool)
+(declare-fun G () Bool)
+(assert 
+(and 
+(or B E (not A))
+(or B (not E) (not A))
+(or B F (not A))
+(or B (not F) (not A))
+(or A (not B) (not D))
+(or B G (not C))
+(or B (not G) (not C))
+(not (or A B (not D)))
+))
+(check-sat)
+(get-model)
+
